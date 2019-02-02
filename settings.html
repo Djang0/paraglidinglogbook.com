@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <meta name="description" content="Best free online paragliding logbook, Take a diary of your flighrs or with igc/gpx tracks,View it in 2D/3D, Flight replay in subjective view, add videos and pictures, join the community!">
+
+    <meta name="author" content="Ludovic Reenaers">
+    <title>Paragliding Logbook - Free Online Flight Diary</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container"> <a class="navbar-brand" href="index.html">Paragliding Logbook</a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> <a class="nav-link" href="latest_flights.html">Latest fligths</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="browse_pilots.html">Browse pilots</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="followed_pilots.html">Followed pilots</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://paraglidinglogbook.com/simulator">Simulator</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://paraglidinglogbook.com/vpwc/index.php">Virtual World Cup</a> </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mr-3 mr-lg-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user fa-fw"></i>
+                Pilot Name
+                <span class="caret"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="profile.html"><i class="fas fa-user fa-fw"></i>User profile</a>
+                <a class="dropdown-item" href="settings.html"><i class="fas fa-cog fa-fw"></i>Settings</a>
+                <a class="dropdown-item" href="manual_flight.html"><i class="fas fa-file-signature fa-fw"></i>Add manual flight</a>
+                <a class="dropdown-item" href="many_flight.html"><i class="fas fa-file-archive fa-fw"></i>Add many flights</a>
+                <a class="dropdown-item" href="https://paraglidinglogbook.com/send_logout.php"><i class="fas fa-sign-out-alt fa-fw"></i>Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="jumbotron" style="background-image: url(img/blue_edited.jpg);">
+        <div class="container">
+          <h1>Welcome to Paragliding Logbook</h1>
+          <p>Best free online paragliding logbook! Take a diary of your flighrs or with igc/gpx tracks.<br /> View it in 2D/3D, add videos and pictures, join the community!</p>
+        </div>
+      </div>
+    </header>
+    <!-- Page Content -->
+    <div class="container">
+      <!-- Features Section -->
+      <br />
+      <div class="row">
+
+        <div class="card col-sm-12">
+          <div class="card-body">
+            <h5 class="card-title">Profile settings</h5>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="true">Settings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="picture-tab" data-toggle="tab" href="#picture" role="tab" aria-controls="picture" aria-selected="false">My picture</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="specific-wing-tab" data-toggle="tab" href="#specific-wing" role="tab" aria-controls="specific-wing" aria-selected="false">Specific wing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="specific-privacy-tab" data-toggle="tab" href="#specific-privacy" role="tab" aria-controls="specific-privacy" aria-selected="false">Specific privacy</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                <form name="user_config" method="post" action="send_config.php">
+                  <div class="form-group">
+                    <label for="wing_id">Your wing</label>
+                    <select class="form-control" id="wing_id" name="wing_id" aria-describedby="wingHelp">
+                      <option value="0">-- Please select a wing --</option>
+                      <option value="10">Advance Alpha 6</option>
+                    </select>
+                    <small id="wingHelp" class="form-text text-muted">If your wing is not in the list : <a href="add_wing.html">click here to add or remove a custom wing</a>.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="privacy">Default privacy level</label>
+                    <select class="form-control" id="privacy" name="privacy">
+                      <option value="0" selected>My flights are public</option>
+                      <option value="1">My flights are private</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="metric">Default metric system</label>
+                    <select class="form-control" id="metric" name="metric">
+                      <option value="0" selected>Meters and Km/h</option>
+                      <option value="1">Feet and Mph</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="track_resolution">3D View Default Resolution</label>
+                    <select class="form-control" id="track_resolution" name="track_resolution" aria-describedby="resHelp">
+                      <option value="2" selected>20%</option>
+                      <option value="4">40%</option>
+                      <option value="...">...%</option>
+                    </select>
+                    <small id="resHelp" class="form-text text-muted">100% is the normal default value, lower values are for less resolution (slow devices), higher values are for more resolution (fast devices). </small>
+                  </div>
+                  <div class="form-group">
+                    <label for="notes">Personnal notes</label>
+                    <textarea class="form-control" id="notes" name="notes" rows="5"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Reset password</button>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="picture" role="tabpanel" aria-labelledby="picture-tab">
+                <br />
+                <form enctype="multipart/form-data" action="add_user_picture.php" method="POST">
+                  <input type="hidden" name="MAX_FILE_SIZE" value="4000000">
+                  <input type="hidden" name="type" value="">
+                  <div class="form-group">
+                    <img class="img-thumbnail" src="https://paraglidinglogbook.com/uploads/user_picture/2442_picture.jpg?a=1420736876">
+                    <input name="userfile" id="userfile" type="file">
+                  </div>
+                  <hr>
+                  <button type="submit" class="btn btn-primary">Save picture</button>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="specific-wing" role="tabpanel" aria-labelledby="specific-wing-tab">
+                <blockquote class="blockquote">
+                  <p>Set a specific wing for flights in a period of time...</p>
+                </blockquote>
+                <form method="post" action="send_wing_time.php">
+                  <div class="form-group">
+                    <label for="wing_id2">Wing model</label>
+                    <select class="form-control" name="wing_id" id="wing_id2">
+                      <option value="0">-- Please select a wing --</option>
+                      <option value="10">Advance Alpha 6</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="datepicker1">From date</label>
+                    <input class="form-control" name="fromdate" type="text" id="datepicker1" placeholder="dd-mm-yyyy" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="datepicker2">To date</label>
+                    <input class="form-control" name="todate" type="text" id="datepicker2" placeholder="dd-mm-yyyy" disabled>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Modify wings</button>
+                </form>
+
+              </div>
+              <div class="tab-pane fade" id="specific-privacy" role="tabpanel" aria-labelledby="specific-privacy-tab">
+                <blockquote class="blockquote">
+                  <p>Set a specific privacy level for flights in a period of time...</p>
+                </blockquote>
+                <form method="post" action="send_privacy_time.php">
+                  <div class="form-group">
+                    <label for="privacy2">Privacy level</label>
+                    <select class="form-control" name="privacy" id="privacy2">
+                      <option value="0">Private</option>
+                      <option value="1">Public</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="datepicker3">From date</label>
+                    <input class="form-control" name="fromdate" type="text" id="datepicker3" placeholder="dd-mm-yyyy" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="datepicker4">To date</label>
+                    <input class="form-control" name="todate" type="text" id="datepicker4" placeholder="dd-mm-yyyy" disabled>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Modify wings</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- /.row -->
+      <hr>
+      <p> </p>
+      <!-- Call to Action Section -->
+      <div class="row mb-4">
+        <div class="col-md-9">
+          <p style="padding-top:25px;text-align:right;" class=".float-right"> <strong>No flight instrument? No problem, record your flight with the Android app'</strong></p>
+        </div>
+        <div class="col-md-3"> <a href='https://play.google.com/store/apps/details?id=com.paraglidinglogbook&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' traget="_blank"><img class=".float-right" alt='Get it on Google Play'
+              style='width:240px;height:93px;' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a> </div>
+      </div>
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white"><a href="https://paraglidinglogbook.com/index.php?page=privacy" target="_blank">Privacy Policy and Terms of Use</a> - Copyright &copy; 2019 ParaglidingLogbook.com - Designed by <a href="https://www.linkedin.com/in/ludovicreenaers/"
+            target="_blank">Ludovic Reenaers</a></p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+      $('#datepicker1').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd-mm-yyyy'
+      });
+      $('#datepicker2').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd-mm-yyyy'
+      });
+      $('#datepicker3').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd-mm-yyyy'
+      });
+      $('#datepicker4').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd-mm-yyyy'
+      });
+
+    </script>
+  </body>
+
+</html>
